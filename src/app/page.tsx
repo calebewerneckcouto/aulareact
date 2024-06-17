@@ -3,13 +3,14 @@ import {peopleList} from '@/data/peopleList';
 
 const Page=()=>{ 
   
- 
+  const filtro = peopleList.filter(pessoa => pessoa.profissao ==='bancaria');
   
   return(
     <div>
-      {peopleList.length >0 &&
+      {filtro.length >0 &&
       <ul>
-           {peopleList.map(pessoa => <li key={pessoa.id}>{pessoa.nome}-{pessoa.profissao}</li>)}
+           <h3>Lista de Bancarios</h3>
+           {filtro.map(pessoa => <li key={pessoa.id}>{pessoa.nome}</li>)}
            </ul>
           }
     </div>
